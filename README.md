@@ -28,19 +28,13 @@ These instructions will guide you on how to set up and run the project on your l
 You can run the application in two ways:
 
 1. **Using the Command Line:**
-   After building the project, navigate to the `build/libs` directory:
-
-    ```bash
-    cd build/libs
-    ```
-
-   Then, use one of the following commands to run the JAR file:
+   After building the project, navigate to the `build/libs` directory and execute:
 
     ```bash
     java -jar Validate_AWS-1.0.jar "{Your JSON String formatted according to AWS::IAM::Role Policy}"
     ```
 
-   or
+   or, if you have a JSON file:
 
     ```bash
     java -jar Validate_AWS-1.0.jar "/absolute/path/to/json/file.json"
@@ -53,15 +47,22 @@ You can run the application in two ways:
     ```
 
 2. **Running in an IDE:**
-   Alternatively, run the project directly within an IDE like IntelliJ IDEA:
+   If you prefer using an IDE such as IntelliJ IDEA:
 
    - Open the project.
    - Navigate to `IDEConfigurationRunner.java` in the `dev.Roach` package.
-   - Right-click and select `Run 'IDEConfigurationRunner.main()'`.
+   - Right-click and choose `Run 'IDEConfigurationRunner.main()'`.
+
+**Troubleshooting:**
+If you encounter issues with running the project or there are dependency errors in the code, try invalidating the IntelliJ IDEA caches:
+- Go to `File` > `Invalidate Caches...`
+- Select `Invalidate and Restart`.
+
+This should resolve issues related to the project setup in the IDE.
 
 ### Testing
 
-To execute unit tests, run the following command in the main project folder:
+Execute unit tests with the following command in the main project folder:
 
 ```bash
 ./gradlew test

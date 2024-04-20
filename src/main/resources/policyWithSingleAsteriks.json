@@ -1,0 +1,23 @@
+ {
+                    "PolicyName": "ComprehensivePolicy",
+                    "PolicyDocument": {
+                        "Version": "2012-10-17",
+                        "Statement": [
+                            {
+                                "Sid": "FullAccess",
+                                "Effect": "Allow",
+                                "Action": ["ec2:StartInstances", "ec2:StopInstances"],
+                                "Resource": ["*"],
+                                "Condition": {
+                                    "StringLike": {"aws:username": "user_*"}
+                                },
+                                "Principal": {
+                                    "AWS": "arn:aws:iam::123456789012:root"
+                                },
+                                "NotPrincipal": {
+                                    "AWS": "arn:aws:iam::123456789012:some-service-role"
+                                }
+                            }
+                        ]
+                    }
+                }
