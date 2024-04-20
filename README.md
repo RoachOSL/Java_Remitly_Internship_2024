@@ -1,6 +1,6 @@
 # Validate AWS IAM Role Policy
 
-This project implements a method to verify input JSON data against AWS IAM Role Policy definitions, as defined by AWS. It evaluates the `Resource` field within the JSON and returns `false` if it contains a single asterisk (*), and `true` otherwise. This can help ensure your AWS IAM policies meet your specified security standards.
+This project implements a method to verify input JSON data against AWS IAM Role Policy definitions, as defined by AWS. It evaluates the `Resource` field within the JSON and returns `false` if it contains a single asterisk (*), and `true` otherwise. This helps ensure your AWS IAM policies meet your specified security standards.
 
 ## Getting Started
 
@@ -14,8 +14,8 @@ These instructions will guide you on how to set up and run the project on your l
 ### Building the Project
 
 1. Clone the repository to your local machine.
-2. Navigate to the project directory where the `build.gradle` file is located.
-3. Run the following command to build the project including all dependencies:
+2. Navigate to the project directory in the terminal where the `build.gradle` file is located. The default directory is `your_path/Java_Remitly_Internship_2024`.
+3. Run the following command to build the project, including all dependencies:
 
     ```bash
     ./gradlew shadowJar
@@ -28,22 +28,28 @@ These instructions will guide you on how to set up and run the project on your l
 You can run the application in two ways:
 
 1. **Using the Command Line:**
-   After building the project, use one of the following commands to run the JAR file:
+   After building the project, navigate to the `build/libs` directory:
 
     ```bash
-    java -jar build/libs/Validate_AWS-1.0.jar "{Your JSON String formatted according to AWS::IAM::Role Policy}"
+    cd build/libs
+    ```
+
+   Then, use one of the following commands to run the JAR file:
+
+    ```bash
+    java -jar Validate_AWS-1.0.jar "{Your JSON String formatted according to AWS::IAM::Role Policy}"
     ```
 
    or
 
     ```bash
-    java -jar build/libs/Validate_AWS-1.0.jar "/absolute/path/to/json/file.json"
+    java -jar Validate_AWS-1.0.jar "/absolute/path/to/json/file.json"
     ```
 
    For example:
 
     ```bash
-    java -jar build/libs/Validate_AWS-1.0.jar "{\"PolicyName\": \"ExamplePolicy\", \"PolicyDocument\": {\"Version\": \"2012-10-17\", \"Statement\": [{\"Sid\": \"Stmt1\", \"Effect\": \"Allow\", \"Action\": [\"ec2:StartInstances\", \"ec2:StopInstances\"], \"Resource\": \"*\"}]}}"
+    java -jar Validate_AWS-1.0.jar "{\"PolicyName\": \"ExamplePolicy\", \"PolicyDocument\": {\"Version\": \"2012-10-17\", \"Statement\": [{\"Sid\": \"Stmt1\", \"Effect\": \"Allow\", \"Action\": [\"ec2:StartInstances\", \"ec2:StopInstances\"], \"Resource\": \"*\"}]}}"
     ```
 
 2. **Running in an IDE:**
@@ -55,7 +61,7 @@ You can run the application in two ways:
 
 ### Testing
 
-Run the following command in the main project folder to execute unit tests:
+To execute unit tests, run the following command in the main project folder:
 
 ```bash
 ./gradlew test
