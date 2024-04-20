@@ -27,6 +27,6 @@ shadowJar {
     archiveClassifier.set('')
     archiveVersion.set('1.0')
     manifest {
-        attributes 'Main-Class': 'dev.Roach.Main'
+        attributes 'Main-Class': 'dev.Roach.CommandLineRunner'
     }
 }
