@@ -5,8 +5,8 @@ import dev.Roach.util.ValidateJSONRolePolicyUtil;
 
 import java.io.IOException;
 
-public class DefaultMain {
-    //Absolute Path to you JSON file
+public class IDEConfigurationRunner {
+    //Absolute Path to you JSON file (You have to change because it is path to my json file)
     private static final String DEFAULT_JSON_PATH = "E:\\ProjektyIntelliJ\\Java_Remitly_Internship_2024\\src\\main\\resources\\policyWithoutSingleAsteriks.json";
     //Json string that u can always change, and it will work if u keep it formatted as AWS::IAM::Role Policy
     private static final String DEFAULT_JSON_STRING = """
